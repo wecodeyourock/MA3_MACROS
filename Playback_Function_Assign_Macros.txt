@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GMA3 DataVersion="2.0.0.0">
+    <Macro Name="SET GO+">
+        <Macroline Command="Assign Go+ At " Wait="Follow" Cli="Yes" />
+    </Macro>
+
+    <Macro Name="SET GO-">
+        <Macroline Command="Assign Go- At " Wait="Follow" Cli="Yes" />
+    </Macro>
+
+    <Macro Name="SET GOTO">
+        <Macroline Command="Assign Goto At " Wait="Follow" Cli="Yes" />
+    </Macro>
+
+    <Macro Name="SET FLASH">
+        <Macroline Command="Assign Flash At " Wait="Follow" Cli="Yes" />
+    </Macro>
+
+    <Macro Name="SET TEMP">
+        <Macroline Command="Assign Temp At " Wait="Follow" Cli="Yes" />
+    </Macro>
+
+    <Macro Name="SET TOGGLE">
+        <Macroline Command="Assign Toggle At " Wait="Follow" Cli="Yes" />
+    </Macro>
+
+    <Macro Name="SET ON">
+        <Macroline Command="Assign On At " Wait="Follow" Cli="Yes" />
+    </Macro>
+
+    <Macro Name="SET OFF">
+        <Macroline Command="Assign Off At " Wait="Follow" Cli="Yes" />
+    </Macro>
+
+    <Macro Name="SET PAUSE">
+        <Macroline Command="Assign Pause At " Wait="Follow" Cli="Yes" />
+    </Macro>
+
+    <Macro Name="SET TOP">
+        <Macroline Command="Assign Top At " Wait="Follow" Cli="Yes" />
+    </Macro>
+
+    <Macro Name="SET LOAD">
+        <Macroline Command="Assign Load At " Wait="Follow" Cli="Yes" />
+    </Macro>
+</GMA3>
