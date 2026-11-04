@@ -1,46 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GMA3 DataVersion="2.0.0.0">
-    <Macro Name="SET GO+">
-        <Macroline Command="Assign Go+ At " Wait="Follow" Cli="Yes" />
+    <!-- 1. TOGGLE -->
+    <Macro Name="ASSIGN TOGGLE">
+        <Macroline Command="Lua &quot;local s=SelectedSequence(); if s then SetVar(UserVars(),'SelSeq',s.no) end&quot;" Wait="Follow" Cli="No" />
+        <Macroline Command="Assign Sequence $SelSeq At " Wait="Follow" Cli="Yes" />
+        <Macroline Command="Lua &quot;local s=SelectedSequence(); local r=s and s:GetReferences(); if r and #r&gt;0 then local e=r[#r]; local p=(e:Parent() and e:Parent().Index) and string.format('Page %s.%s',e:Parent().Index,e.Index) or e:ToAddr(); Cmd('Assign Toggle At '..p) end&quot;" Wait="0.1s" Cli="No" />
     </Macro>
 
-    <Macro Name="SET GO-">
-        <Macroline Command="Assign Go- At " Wait="Follow" Cli="Yes" />
+    <!-- 2. FLASH -->
+    <Macro Name="ASSIGN FLASH">
+        <Macroline Command="Lua &quot;local s=SelectedSequence(); if s then SetVar(UserVars(),'SelSeq',s.no) end&quot;" Wait="Follow" Cli="No" />
+        <Macroline Command="Assign Sequence $SelSeq At " Wait="Follow" Cli="Yes" />
+        <Macroline Command="Lua &quot;local s=SelectedSequence(); local r=s and s:GetReferences(); if r and #r&gt;0 then local e=r[#r]; local p=(e:Parent() and e:Parent().Index) and string.format('Page %s.%s',e:Parent().Index,e.Index) or e:ToAddr(); Cmd('Assign Flash At '..p) end&quot;" Wait="0.1s" Cli="No" />
     </Macro>
 
-    <Macro Name="SET GOTO">
-        <Macroline Command="Assign Goto At " Wait="Follow" Cli="Yes" />
+    <!-- 3. TEMP -->
+    <Macro Name="ASSIGN TEMP">
+        <Macroline Command="Lua &quot;local s=SelectedSequence(); if s then SetVar(UserVars(),'SelSeq',s.no) end&quot;" Wait="Follow" Cli="No" />
+        <Macroline Command="Assign Sequence $SelSeq At " Wait="Follow" Cli="Yes" />
+        <Macroline Command="Lua &quot;local s=SelectedSequence(); local r=s and s:GetReferences(); if r and #r&gt;0 then local e=r[#r]; local p=(e:Parent() and e:Parent().Index) and string.format('Page %s.%s',e:Parent().Index,e.Index) or e:ToAddr(); Cmd('Assign Temp At '..p) end&quot;" Wait="0.1s" Cli="No" />
     </Macro>
 
-    <Macro Name="SET FLASH">
-        <Macroline Command="Assign Flash At " Wait="Follow" Cli="Yes" />
+    <!-- 4. SWOP -->
+    <Macro Name="ASSIGN SWOP">
+        <Macroline Command="Lua &quot;local s=SelectedSequence(); if s then SetVar(UserVars(),'SelSeq',s.no) end&quot;" Wait="Follow" Cli="No" />
+        <Macroline Command="Assign Sequence $SelSeq At " Wait="Follow" Cli="Yes" />
+        <Macroline Command="Lua &quot;local s=SelectedSequence(); local r=s and s:GetReferences(); if r and #r&gt;0 then local e=r[#r]; local p=(e:Parent() and e:Parent().Index) and string.format('Page %s.%s',e:Parent().Index,e.Index) or e:ToAddr(); Cmd('Assign Swop At '..p) end&quot;" Wait="0.1s" Cli="No" />
     </Macro>
 
-    <Macro Name="SET TEMP">
-        <Macroline Command="Assign Temp At " Wait="Follow" Cli="Yes" />
+    <!-- 5. GO+ -->
+    <Macro Name="ASSIGN GO+">
+        <Macroline Command="Lua &quot;local s=SelectedSequence(); if s then SetVar(UserVars(),'SelSeq',s.no) end&quot;" Wait="Follow" Cli="No" />
+        <Macroline Command="Assign Sequence $SelSeq At " Wait="Follow" Cli="Yes" />
+        <Macroline Command="Lua &quot;local s=SelectedSequence(); local r=s and s:GetReferences(); if r and #r&gt;0 then local e=r[#r]; local p=(e:Parent() and e:Parent().Index) and string.format('Page %s.%s',e:Parent().Index,e.Index) or e:ToAddr(); Cmd('Assign Go+ At '..p) end&quot;" Wait="0.1s" Cli="No" />
     </Macro>
 
-    <Macro Name="SET TOGGLE">
-        <Macroline Command="Assign Toggle At " Wait="Follow" Cli="Yes" />
+    <!-- 6. GO- -->
+    <Macro Name="ASSIGN GO-">
+        <Macroline Command="Lua &quot;local s=SelectedSequence(); if s then SetVar(UserVars(),'SelSeq',s.no) end&quot;" Wait="Follow" Cli="No" />
+        <Macroline Command="Assign Sequence $SelSeq At " Wait="Follow" Cli="Yes" />
+        <Macroline Command="Lua &quot;local s=SelectedSequence(); local r=s and s:GetReferences(); if r and #r&gt;0 then local e=r[#r]; local p=(e:Parent() and e:Parent().Index) and string.format('Page %s.%s',e:Parent().Index,e.Index) or e:ToAddr(); Cmd('Assign Go- At '..p) end&quot;" Wait="0.1s" Cli="No" />
     </Macro>
 
-    <Macro Name="SET ON">
-        <Macroline Command="Assign On At " Wait="Follow" Cli="Yes" />
+    <!-- 7. GOTO -->
+    <Macro Name="ASSIGN GOTO">
+        <Macroline Command="Lua &quot;local s=SelectedSequence(); if s then SetVar(UserVars(),'SelSeq',s.no) end&quot;" Wait="Follow" Cli="No" />
+        <Macroline Command="Assign Sequence $SelSeq At " Wait="Follow" Cli="Yes" />
+        <Macroline Command="Lua &quot;local s=SelectedSequence(); local r=s and s:GetReferences(); if r and #r&gt;0 then local e=r[#r]; local p=(e:Parent() and e:Parent().Index) and string.format('Page %s.%s',e:Parent().Index,e.Index) or e:ToAddr(); Cmd('Assign Goto At '..p) end&quot;" Wait="0.1s" Cli="No" />
     </Macro>
 
-    <Macro Name="SET OFF">
-        <Macroline Command="Assign Off At " Wait="Follow" Cli="Yes" />
+    <!-- 8. ON -->
+    <Macro Name="ASSIGN ON">
+        <Macroline Command="Lua &quot;local s=SelectedSequence(); if s then SetVar(UserVars(),'SelSeq',s.no) end&quot;" Wait="Follow" Cli="No" />
+        <Macroline Command="Assign Sequence $SelSeq At " Wait="Follow" Cli="Yes" />
+        <Macroline Command="Lua &quot;local s=SelectedSequence(); local r=s and s:GetReferences(); if r and #r&gt;0 then local e=r[#r]; local p=(e:Parent() and e:Parent().Index) and string.format('Page %s.%s',e:Parent().Index,e.Index) or e:ToAddr(); Cmd('Assign On At '..p) end&quot;" Wait="0.1s" Cli="No" />
     </Macro>
 
-    <Macro Name="SET PAUSE">
-        <Macroline Command="Assign Pause At " Wait="Follow" Cli="Yes" />
+    <!-- 9. OFF -->
+    <Macro Name="ASSIGN OFF">
+        <Macroline Command="Lua &quot;local s=SelectedSequence(); if s then SetVar(UserVars(),'SelSeq',s.no) end&quot;" Wait="Follow" Cli="No" />
+        <Macroline Command="Assign Sequence $SelSeq At " Wait="Follow" Cli="Yes" />
+        <Macroline Command="Lua &quot;local s=SelectedSequence(); local r=s and s:GetReferences(); if r and #r&gt;0 then local e=r[#r]; local p=(e:Parent() and e:Parent().Index) and string.format('Page %s.%s',e:Parent().Index,e.Index) or e:ToAddr(); Cmd('Assign Off At '..p) end&quot;" Wait="0.1s" Cli="No" />
     </Macro>
 
-    <Macro Name="SET TOP">
-        <Macroline Command="Assign Top At " Wait="Follow" Cli="Yes" />
+    <!-- 10. PAUSE -->
+    <Macro Name="ASSIGN PAUSE">
+        <Macroline Command="Lua &quot;local s=SelectedSequence(); if s then SetVar(UserVars(),'SelSeq',s.no) end&quot;" Wait="Follow" Cli="No" />
+        <Macroline Command="Assign Sequence $SelSeq At " Wait="Follow" Cli="Yes" />
+        <Macroline Command="Lua &quot;local s=SelectedSequence(); local r=s and s:GetReferences(); if r and #r&gt;0 then local e=r[#r]; local p=(e:Parent() and e:Parent().Index) and string.format('Page %s.%s',e:Parent().Index,e.Index) or e:ToAddr(); Cmd('Assign Pause At '..p) end&quot;" Wait="0.1s" Cli="No" />
     </Macro>
 
-    <Macro Name="SET LOAD">
-        <Macroline Command="Assign Load At " Wait="Follow" Cli="Yes" />
+    <!-- 11. TOP -->
+    <Macro Name="ASSIGN TOP">
+        <Macroline Command="Lua &quot;local s=SelectedSequence(); if s then SetVar(UserVars(),'SelSeq',s.no) end&quot;" Wait="Follow" Cli="No" />
+        <Macroline Command="Assign Sequence $SelSeq At " Wait="Follow" Cli="Yes" />
+        <Macroline Command="Lua &quot;local s=SelectedSequence(); local r=s and s:GetReferences(); if r and #r&gt;0 then local e=r[#r]; local p=(e:Parent() and e:Parent().Index) and string.format('Page %s.%s',e:Parent().Index,e.Index) or e:ToAddr(); Cmd('Assign Top At '..p) end&quot;" Wait="0.1s" Cli="No" />
+    </Macro>
+
+    <!-- 12. LOAD -->
+    <Macro Name="ASSIGN LOAD">
+        <Macroline Command="Lua &quot;local s=SelectedSequence(); if s then SetVar(UserVars(),'SelSeq',s.no) end&quot;" Wait="Follow" Cli="No" />
+        <Macroline Command="Assign Sequence $SelSeq At " Wait="Follow" Cli="Yes" />
+        <Macroline Command="Lua &quot;local s=SelectedSequence(); local r=s and s:GetReferences(); if r and #r&gt;0 then local e=r[#r]; local p=(e:Parent() and e:Parent().Index) and string.format('Page %s.%s',e:Parent().Index,e.Index) or e:ToAddr(); Cmd('Assign Load At '..p) end&quot;" Wait="0.1s" Cli="No" />
     </Macro>
 </GMA3>
